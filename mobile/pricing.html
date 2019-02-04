@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <title>Commerce Layer Pricing</title>
+    
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/jquery.mobile.min.css">
+	<!-- TODO: JQuery Mobile Theme -->
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	
+	<link href="../common/cl-pricing-style.css" rel="stylesheet">
+	
+	<!-- JAVASCRIPT -->
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.mobile.min.js"></script>
+	
+	<script src="../common/cl-pricing-common.js"></script>
+	
+	<!-- Custom Mobile Style -->
+	<style>
+	
+		#pricing-component-container {
+			width: 400px;
+			margin: auto;
+		}
+	
+		#sliders-container {
+			width: 100%;
+			padding: 0.5em;
+			margin: 50px auto 0 auto;
+		}
+		
+		#scenarios-container {
+			width: 100%;
+		}
+
+		@media only screen and (max-width: 450px) {
+			#pricing-component-container {
+				width: 100%;
+			}
+		}
+		
+		div.slider-box {
+			margin-bottom: 2em;
+		}
+				
+		div.ui-slider-track {
+			margin-left:0.5em;
+		}
+		
+		.ui-slider-track .ui-btn.ui-slider-handle {
+			padding:0 0.2em;
+			width: inherit;
+			min-width: 28px;
+		}
+		
+		.ui-page-theme-a {
+			background-color: #fff;
+		}
+		
+		.ui-slider-popup {
+			padding-left:0.2em;
+			padding-right:0.2em;
+			width: inherit;
+			min-width: 64px;
+		}
+		
+		.ui-input-text {
+			display: none;
+		}
+		
+		td.td-input span {
+			color: #e63a74;
+			font-weight: bold;
+		}
+		
+		/*
+		.ui-field-contain label {
+			font-size: 1em;
+		}
+		*/
+
+	</style>
+	
+</head>
+<body>
+
+    <div data-role="page" id="index">
+ 
+        <div data-role="header">
+           
+        </div><!-- /header -->
+ 
+        <div role="main" class="ui-content">
+		
+			<div id="pricing-component-container">
+			
+				<div class="ui-field-contain">
+					<label for="scenarios" class="bold">Scenario:</label>
+					<select name="scenarios" id="scenarios" data-native-menu="false" data-mini="true">
+						<option value="no-scenario" data-placeholder="true">Choose One...</option>
+					</select>
+				</div>
+		
+				<div id="sliders-container">
+					<div id="sliders">
+					
+					</div>
+				
+					<div id="total-price" style="margin-top:3em;">
+						<table width="100%" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="td-label"><label for="totalPrice" class="value bold">Total Monthly Fee:</label></td>
+								<td class="td-input"><input type="text" id="totalPrice" readonly class="value" value="0" data-role="none"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			
+			</div>
+			
+        </div><!-- /content -->
+ 
+		<!--
+        <div data-role="footer">
+           
+        </div>--><!-- /footer -->
+ 
+    </div><!-- /page -->
+	
+<script>
+
+	function sliderChange(sliderName) {
+		$( "#value-"+sliderName ).val( getSliderPrice(sliderName, $("#"+sliderName).val() ));
+		evaluateTotalPrice();
+	}
+
+	function initSlider(slider) {
+		
+		var slObj = $("#"+slider.name);
+		
+		slObj.attr("min", slider.min);
+		slObj.attr("max", slider.max);
+		slObj.attr("step", slider.step);
+		slObj.attr("value", slider.value);
+		
+		slObj.slider().textinput();
+		
+		$("#slider-box-"+slider.name+" div").on('change', function() {
+			sliderChange(slider.name);
+		});
+		
+		sliderChange(slider.name);
+		
+	}
+
+
+	function initScenarios() {
+		var scsObj = $("#scenarios");
+		if (typeof scsObj.selectmenu !== 'undefined' && $.isFunction(scsObj.selectmenu)) scsObj.selectmenu().selectmenu('refresh', true);
+		$(scsObj).change(changeScenario);
+	}
+
+	function updateSlider(slider, value) {
+		$("#"+slider.name).val(value);
+		sliderChange(slider.name);
+		var slObj = $("#"+slider.name);
+		if (typeof slObj.slider !== 'undefined' && $.isFunction(slObj.slider)) slObj.slider("refresh")
+	}
+
+</script>
+
+<div id="slider-cloneable" style="display:none;">
+<div id="slider-box-@SLIDER_NAME@" class="slider-box">
+	<table width="100%" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="td-label"><span>@SLIDER_LABEL@:</span></td>
+			<td class="td-discount"><span id="discount-@SLIDER_NAME@"></span></td>
+			<!--<td class="td-input"><span id="value-@SLIDER_NAME@" class="slider-value"></span></td>-->
+			<td class="td-input"><input type="text" id="value-@SLIDER_NAME@" readonly class="value slider-value"></td>
+		</tr>
+	</table>
+	<label for="@SLIDER_NAME@" class="ui-hidden-accessible">@SLIDER_LABEL@:</label>
+	<input type="range" name="@SLIDER_NAME@" id="@SLIDER_NAME@" data-highlight="true" min="0" max="100" step="1" value="50" data-show-value="true" data-popup-enabled="true" style="display: none;">
+</div>
+</div>
+	
+</body>
+</html>
