@@ -1,0 +1,53 @@
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.8em;
+	background-color: #fff;
+	color: #333;
+}
+
+input.value {
+	border:0;
+	color:#e63a74;
+	font-weight:bold;
+	text-align:right;
+	font-size:1em;
+	max-width: 10em;
+}
+
+label.bold  {
+	font-weight: bold;
+}
+
+label.big {
+	font-size: 16px;
+	color: #333;
+}
+		
+td.td-label {
+	width:50%;
+	padding-left: 0;
+}
+		
+td.td-discount {
+	width:20%;
+	min-width: 5em;
+	font-weight:bold;
+	text-align:right;
+	padding-right:1em;
+}
+		
+td.td-discount > span {
+	padding:0 1em;
+}
+		
+td.td-input {
+	width:30%;
+	padding-right:0.5em;
+	text-align:right;
+}
+
+td.td-input > #totalPrice {
+	font-size:1.5em;
+}
+

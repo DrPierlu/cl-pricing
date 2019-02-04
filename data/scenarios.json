@@ -1,0 +1,53 @@
+[
+	{
+		"name": "startup",
+		"label": "Startup",
+		"description": "Scenario Startup",
+		"values" : [
+			 { "slider" : "markets_occ", "value" : 1 },
+			 { "slider" : "markets_ori", "value" : 0 },
+			 { "slider" : "catalogs", "value" : 1 },
+			 { "slider" : "gateways", "value" : 1 },
+			 { "slider" : "forwarders", "value" : 0 },
+			 { "slider" : "languages_occ", "value" : 1 },
+			 { "slider" : "languages_ori", "value" : 0 },
+			 { "slider" : "products", "value" : 100 },
+			 { "slider" : "images", "value" : 200 },
+			 { "slider" : "orders", "value" : 30 }
+		]
+	},
+	{
+		"name": "business",
+		"label": "Business",
+		"description": "Scenario Business",
+		"values" : [
+			 { "slider" : "markets_occ", "value" : 2 },
+			 { "slider" : "markets_ori", "value" : 0 },
+			 { "slider" : "catalogs", "value" : 1 },
+			 { "slider" : "gateways", "value" : 1 },
+			 { "slider" : "forwarders", "value" : 1 },
+			 { "slider" : "languages_occ", "value" : 4 },
+			 { "slider" : "languages_ori", "value" : 0 },
+			 { "slider" : "products", "value" : 1000 },
+			 { "slider" : "images", "value" : 3000 },
+			 { "slider" : "orders", "value" : 100 }
+		]
+	},
+	{
+		"name": "enterprise",
+		"label": "Enterprise",
+		"description": "Scenario Enterprise",
+		"values" : [
+			 { "slider" : "markets_occ", "value" : 3 },
+			 { "slider" : "markets_ori", "value" : 1 },
+			 { "slider" : "catalogs", "value" : 1 },
+			 { "slider" : "gateways", "value" : 2 },
+			 { "slider" : "forwarders", "value" : 2 },
+			 { "slider" : "languages_occ", "value" : 4 },
+			 { "slider" : "languages_ori", "value" : 1 },
+			 { "slider" : "products", "value" : 1000 },
+			 { "slider" : "images", "value" : 3000 },
+			 { "slider" : "orders", "value" : 300 }
+		]
+	}
+]

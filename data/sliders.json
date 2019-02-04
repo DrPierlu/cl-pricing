@@ -1,0 +1,102 @@
+[
+	{
+		"name": "markets_occ",
+		"label": "Mercati Occidentali",
+		"min" : 1,
+		"max" : 10,
+		"step"	: 1,
+		"value" : 1,
+		"price" : 150.00,
+		"discounts" : [
+			 { "thr" : 3, "pct" : 10 },
+			 { "thr" : 5, "pct" : 15 },
+			 { "thr" : 7, "pct" : 20 }
+		]
+	},
+	{
+		"name": "markets_ori",
+		"label": "Mercati Orientali",
+		"min" : 0,
+		"max" : 10,
+		"step"	: 1,
+		"value" : 0,
+		"price" : 300.00,
+		"discounts" : [
+			 { "thr" : 3, "pct" : 10 },
+			 { "thr" : 5, "pct" : 15 },
+			 { "thr" : 7, "pct" : 20 }
+		]
+	},
+	{
+		"name": "catalogs",
+		"label": "Cataloghi",
+		"min" : 0,
+		"max" : 10,
+		"step"	: 1,
+		"value" : 0,
+		"price" : 100.00
+	},
+	{
+		"name": "gateways",
+		"label": "Gateways",
+		"min" : 0,
+		"max" : 10,
+		"step"	: 1,
+		"value" : 0,
+		"price" : 50.00
+	},
+	{
+		"name": "forwarders",
+		"label": "Spedizionieri",
+		"min" : 0,
+		"max" : 10,
+		"step"	: 1,
+		"value" : 0,
+		"price" : 50.00
+	},
+	{
+		"name": "languages_occ",
+		"label": "Lingue Occidentali",
+		"min" : 0,
+		"max" : 20,
+		"step"	: 1,
+		"value" : 0,
+		"price" : 10.00
+	},
+	{
+		"name": "languages_ori",
+		"label": "Lingue Orientali",
+		"min" : 0,
+		"max" : 20,
+		"step"	: 1,
+		"value" : 0,
+		"price" : 30.00
+	},
+	{
+		"name": "products",
+		"label": "Prodotti",
+		"min" : 0,
+		"max" : 10000,
+		"step"	: 100,
+		"value" : 0,
+		"price" : 0.01
+	},
+	{
+		"name": "images",
+		"label": "Immagini",
+		"min" : 0,
+		"max" : 10000,
+		"step"	: 100,
+		"value" : 0,
+		"price" : 0.02
+	},
+	{
+		"name": "orders",
+		"label": "Ordini",
+		"min" : 0,
+		"max" : 1000,
+		"step"	: 10,
+		"value" : 0,
+		"price" : 3.00
+	}
+]

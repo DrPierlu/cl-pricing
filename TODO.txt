@@ -1,0 +1,6 @@
+
+[DESKTOP]
+
+
+[MOBILE]
+caricare la versione ridotta custom di jquery mobile
